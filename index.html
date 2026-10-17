@@ -5,10 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#090b18">
-<title>Support SpotlightPlay</title>
+<title>Support This Creator</title>
 
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -24,7 +26,6 @@ body {
     radial-gradient(ellipse at top, #243b80 0%, transparent 55%),
     radial-gradient(ellipse at bottom, #641e79 0%, transparent 50%),
     linear-gradient(135deg, #080b18, #11152b, #090b18);
-  overflow: hidden;
 }
 
 .card {
@@ -33,21 +34,21 @@ body {
   padding: 38px 25px;
   border: 1px solid rgba(255,255,255,.18);
   border-radius: 25px;
-  background: rgba(15, 19, 42, .82);
-  box-shadow: 0 0 45px rgba(111, 80, 255, .22);
+  background: rgba(15,19,42,.82);
+  box-shadow: 0 0 45px rgba(111,80,255,.22);
   backdrop-filter: blur(12px);
   animation: appear .7s ease-out;
 }
 
 .logo {
   font-size: 52px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   filter: drop-shadow(0 0 15px #9274ff);
 }
 
 h1 {
-  font-size: clamp(26px, 7vw, 34px);
-  line-height: 1.2;
+  font-size: clamp(27px, 7vw, 35px);
+  line-height: 1.25;
   margin: 8px 0 15px;
 }
 
@@ -71,7 +72,7 @@ p {
   text-decoration: none;
   font-weight: bold;
   font-size: 17px;
-  box-shadow: 0 7px 25px rgba(139, 82, 255, .3);
+  box-shadow: 0 7px 25px rgba(139,82,255,.3);
   transition: transform .2s;
 }
 
@@ -79,19 +80,21 @@ p {
   transform: translateY(-3px);
 }
 
-.note {
-  font-size: 12px;
-  color: #aab1cb;
-  margin-top: 22px;
-}
-
 @keyframes appear {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .card { animation: none; }
+  .card {
+    animation: none;
+  }
 }
 </style>
 
@@ -99,8 +102,10 @@ p {
 const upiURL =
   "upi://pay?pa=ble%40jio&cu=INR&pn=SpotlightPlay";
 
-// First priority: try opening the UPI payment app.
-window.location.replace(upiURL);
+// Attempt UPI redirect as soon as the page loads.
+window.addEventListener("load", function () {
+  window.location.href = upiURL;
+});
 </script>
 </head>
 
@@ -108,21 +113,16 @@ window.location.replace(upiURL);
   <main class="card">
     <div class="logo">🎮</div>
 
-    <h1>You Can Support<br>
-      <span>SpotlightPlay</span>
+    <h1>
+      <span>Help This Creator Grow</span>
     </h1>
 
-    <p>
-      Your support means a lot!<br>
-    </p>
+    <p>Your support means a lot!</p>
 
-    <a class="button" href="upi://pay?pa=ble%40jio&amp;cu=INR&amp;pn=SpotlightPlay">
+    <a class="button"
+       href="upi://pay?pa=ble%40jio&amp;cu=INR&amp;pn=SpotlightPlay">
       ♥ Support via UPI
     </a>
-
-    <div class="note">
-     
-    </div>
   </main>
 </body>
 </html>
