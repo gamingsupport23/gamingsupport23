@@ -1,17 +1,16 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting to Payment</title>
   <meta http-equiv="refresh" content="0;url=upi://pay?pa=ble%40jio&amp;cu=INR&amp;pn=SpotlightPlay">
-  <script>
-    window.location.href = "upi://pay?pa=ble%40jio&cu=INR&pn=SpotlightPlay";
-  </script>
+  <title>Redirecting</title>
 </head>
 <body>
-  <p>Redirecting to UPI payment...</p>
-  <a href="upi://pay?pa=ble%40jio&amp;cu=INR&amp;pn=SpotlightPlay">Click here if not redirected</a>
+  <script>
+    window.location.replace(
+      "upi://pay?pa=ble%40jio&cu=INR&pn=SpotlightPlay"
+    );
+  </script>
 </body>
 </html>
