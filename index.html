@@ -2,46 +2,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Support SpotlightPlay</title>
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #111827;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-    .container {
-      padding: 24px;
-    }
-    h2 {
-      font-size: 26px;
-    }
-    a {
-      display: inline-block;
-      margin-top: 16px;
-      padding: 14px 28px;
-      background: #16a34a;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090b18">
+<title>Support SpotlightPlay</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at top, #243b80 0%, transparent 55%),
+    radial-gradient(ellipse at bottom, #641e79 0%, transparent 50%),
+    linear-gradient(135deg, #080b18, #11152b, #090b18);
+  overflow: hidden;
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  padding: 38px 25px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 25px;
+  background: rgba(15, 19, 42, .82);
+  box-shadow: 0 0 45px rgba(111, 80, 255, .22);
+  backdrop-filter: blur(12px);
+  animation: appear .7s ease-out;
+}
+
+.logo {
+  font-size: 52px;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 0 15px #9274ff);
+}
+
+h1 {
+  font-size: clamp(26px, 7vw, 34px);
+  line-height: 1.2;
+  margin: 8px 0 15px;
+}
+
+h1 span {
+  color: #a99aff;
+}
+
+p {
+  color: #d0d5e8;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.button {
+  display: block;
+  margin-top: 26px;
+  padding: 17px 14px;
+  border-radius: 13px;
+  background: linear-gradient(100deg, #7255ff, #b14dff);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 17px;
+  box-shadow: 0 7px 25px rgba(139, 82, 255, .3);
+  transition: transform .2s;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.note {
+  font-size: 12px;
+  color: #aab1cb;
+  margin-top: 22px;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card { animation: none; }
+}
+</style>
+
+<script>
+const upiURL =
+  "upi://pay?pa=ble%40jio&cu=INR&pn=SpotlightPlay";
+
+// First priority: try opening the UPI payment app.
+window.location.replace(upiURL);
+</script>
 </head>
+
 <body>
-  <div class="container">
-    <h2>You Can Support This Small Creator</h2>
-    <p>Your support means a lot!</p>
-    <a href="upi://pay?pa=ble%40jio&amp;cu=INR&amp;pn=SpotlightPlay">
-      Support via UPI
+  <main class="card">
+    <div class="logo">🎮</div>
+
+    <h1>You Can Support<br>
+      <span>SpotlightPlay</span>
+    </h1>
+
+    <p>
+      Enjoying my gaming videos?<br>
+      Your support helps this small creator
+      continue making more content.
+    </p>
+
+    <a class="button" href="upi://pay?pa=ble%40jio&amp;cu=INR&amp;pn=SpotlightPlay">
+      ♥ Support via UPI
     </a>
-  </div>
+
+    <div class="note">
+      Thank you for being part of the gaming community!
+    </div>
+  </main>
 </body>
 </html>
